@@ -1,13 +1,14 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const createPage = require('./src/page-template.js');
-const { writeFile, copyFile } = require('./util/generateMarkdown.js');
+// const createPage = require('./src/page-template.js');
+// const { writeFile, copyFile } = require('./util/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = ['What is your name?', 'Enter your GitHub username', 'Enter a description',
 'Enter installation requirements', 'Enter information on how to use the application', 'Enter guidelines on how other users can contribute to the project',
-'Enter test instructions for the appliacation', 'Enter a GitHub link of your project'];
+'Enter test instructions for the appliacation', 'Enter a GitHub link of your project', 'Enter your email address'];
 
+// TODO: Create a function to write README file
 const promptDeveloper = function () {
     return inquirer.prompt([
         {
@@ -37,25 +38,7 @@ const promptDeveloper = function () {
                 return false;
               }
             }
-        }
-    ]);
-}
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-
-        console.log(`
-    ==================
-    Add README prompts
-    ==================
-    `);
-
-    // If there is no data array property, create one
-    if (!data.projects) {
-        data.projects = [];
-    }
-
-    return inquirer.prompt([
+        },
         {
             type: 'input',
             name: 'description',
@@ -139,44 +122,28 @@ function writeToFile(fileName, data) {
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: questions[8],
+            validate: function (emailInput) {
+                if (emailInput) {
+                    return true;
+                } 
+                else {
+                    console.log('You need to enter your email address');
+                    return false;
+                }
+            }
         }
-    ])
-    .then(function (projectData) {
-        
-        data.projects.push(projectData);
-        
-        if (data.confirmAddProject) {
-            return writeToFile(data);
-        }
-        else {
-            return data;
-        }
-
-    });
-
+    ]);
 }
+
+promptDeveloper();
 
 // TODO: Create a function to initialize app
 function init() {
-    
-    promptDeveloper()
-    .then(promptProject)
-    .then(function (data) {
-        return createPage(data);
-    })
-    .then(function (pageHTML) {
-        return writeFile(pageHTML);
-    })
-    .then(function (writeFileResponse) {
-        console.log(writeFileResponse);
-        return copyFile();
-    })
-    .then(function (copyFileResponse) {
-        console.log(copyFileResponse);
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
    
 }
 
