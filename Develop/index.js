@@ -6,7 +6,7 @@ const inquirer = require('inquirer');
 // TODO: Create an array of questions for user input
 const questions = ['What is your name?', 'Enter your GitHub username', 'Enter a description',
 'Enter installation requirements', 'Enter information on how to use the application', 'Enter guidelines on how other users can contribute to the project',
-'Enter test instructions for the appliacation', 'Enter a GitHub link of your project', 'Enter your email address'];
+'Enter test instructions for the appliacation', 'Enter a GitHub link of your project', 'Enter your email address', 'Chose a license for your application'];
 
 // TODO: Create a function to write README file
 const promptDeveloper = function () {
@@ -136,17 +136,27 @@ const promptDeveloper = function () {
                     return false;
                 }
             }
-        }
-    ]);
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: questions[9],
+            choices: ['MIT', 'Apache-2.0', 'GPL-3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'BSD-4-Clause']
+        },
+    ])
+    .then(function (answer) {
+        // Function call to initialize app
+        init(answer);
+    });
 }
 
 promptDeveloper();
 
 // TODO: Create a function to initialize app
-function init() {
-   
+function init(answer) {
+    console.log(answer);
 }
 
-// Function call to initialize app
-init();
+
+
 
