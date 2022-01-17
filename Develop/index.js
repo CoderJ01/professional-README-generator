@@ -189,6 +189,7 @@ function init(answer) {
     }
     if (answer.license === 'None') {
         icon = '';
+        answer.license = 'no license'
     }
 
     return `<!DOCTYPE html>
@@ -262,7 +263,7 @@ function init(answer) {
                 </section>
                 <section>
                     <h2 id="license">License</h2>
-                    <p>This application is covered under ${answer.license}</p>
+                    <p>This application is covered under ${answer.license}.</p>
                 </section>
                 <section>
                     <h2 id="contributing">Contributing</h2>
