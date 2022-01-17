@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = ['What is your name?', 'Enter your GitHub username', 'Enter a description',
-'Enter installation requirements', 'Enter information on how to use the application', 'Enter guidelines on how other users can contribute to the project',
+const questions = ['What is your name?', 'Enter your GitHub username', 'Enter a description for your README',
+'Enter installation requirements for your README', 'Enter information on how to use the application', 'Enter guidelines on how other users can contribute to the project',
 'Enter test instructions for the appliacation', 'Enter a GitHub link of your project', 'Enter your email address', 'Chose a license for your application',
 'Enter the title of your project'];
 
@@ -160,7 +160,11 @@ const promptDeveloper = function () {
     ])
     .then(function (answer) {
         // Function call to initialize app
-        init(answer);
+        fs.writeFile('./dist/index.html', init(answer), function (err) {
+            if (err) throw err;
+          
+            console.log('Portfolio complete! Check out index.html to see the output!');
+        });
     });
 }
 
@@ -168,27 +172,24 @@ promptDeveloper();
 
 // TODO: Create a function to initialize app
 function init(answer) {
-    console.log(answer);
 
     var icon = '';
 
     if (answer.license === 'MIT') {
-        icon = '<img alt="Github logo" src="./license-icons/dist/64x64/mit.png" width="64" height="64">';
+        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/mit.png" width="64" height="64">';
     }
     if (answer.license === 'Apache-2.0') {
-        icon = '<img alt="Github logo" src="./license-icons/dist/64x64/apache.png" width="64" height="64">';
+        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/apache.png" width="64" height="64">';
     }
     if (answer.license === 'GPL-3.0') {
-        icon = '<img alt="Github logo" src="./license-icons/dist/64x64/gpl.png" width="64" height="64">';
+        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/gpl.png" width="64" height="64">';
     }
     if (answer.license === 'BSD-2-Clause' || answer.license === 'BSD-3-Clause' || answer.license === 'BSD-4-Clause') {
-        icon = '<img alt="Github logo" src="./license-icons/dist/64x64/bsd.png" width="64" height="64">';
+        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/bsd.png" width="64" height="64">';
     }
     if (answer.license === 'None') {
         icon = '';
     }
-
-    console.log(icon);
 
     return `<!DOCTYPE html>
     <html lang="en">
@@ -212,7 +213,7 @@ function init(answer) {
                 }
                 main section {
                     height: 175px;
-                    width: 98%;
+                    width: 85%;
                     margin-left: 1%;
                 }
                 section h2 {
@@ -229,6 +230,7 @@ function init(answer) {
                 #image {
                     margin-top: -1375px;
                     margin-left: 1200px;
+                    width: 75px;
                 }
             </style>
         </head>
@@ -273,7 +275,7 @@ function init(answer) {
                 <section>
                     <h2 id="questions">Questions</h2>
                     <p>For more information, I can be reached at: ${answer.email}</p>
-                    <p>To see my GitHub profile <a href="https://github.com/${answer.github}">Click here</a></p>
+                    <p>To see my GitHub profile <a href="https://github.com/${answer.github}">click here</a>.</p>
                 </section>
                 <section id="image">
                     ${icon}
@@ -282,7 +284,6 @@ function init(answer) {
         </body>
     </html>`;
 }
-
 
 
 

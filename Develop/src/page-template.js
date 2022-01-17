@@ -23,7 +23,7 @@ const createPage = function (firstName, github) {
 
 }
 
-fs.writeFile('../dist/index.html', createPage(firstName, github), function (err) {
+fs.writeFile('../dist/testing.html', createPage(firstName, github), function (err) {
     if (err) throw err;
   
     console.log('Portfolio complete! Check out index.html to see the output!');
