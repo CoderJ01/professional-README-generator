@@ -5,7 +5,7 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 const questions = ['What is your name?', 'Enter your GitHub username', 'Enter a description for your README',
 'Enter installation requirements for your README', 'Enter information on how to use the application', 'Enter guidelines on how other users can contribute to the project',
-'Enter test instructions for the appliacation', 'Enter a GitHub repository link of your project', 'Enter your email address', 'Chose a license for your application',
+'Enter test instructions for the application', 'Enter a GitHub repository link of your project', 'Enter your email address', 'Chose a license for your application',
 'Enter the title of your project'];
 
 // TODO: Create a function to write README file
@@ -249,7 +249,7 @@ function init(answer) {
                     <h3><a href="#usage">Usage</a></h3>
                     <h3><a href="#license">License</a></h3>
                     <h3><a href="#contributing">Contributing</a></h3>
-                    <h3><a href="#test">Test</a></h3>
+                    <h3><a href="#test">Tests</a></h3>
                     <h3><a href="#questions">Questions</a></h3>
                 </section>
                 <section>
@@ -262,7 +262,7 @@ function init(answer) {
                 </section>
                 <section>
                     <h2 id="license">License</h2>
-                    <p>${answer.license}</p>
+                    <p>This application is covered under ${answer.license}</p>
                 </section>
                 <section>
                     <h2 id="contributing">Contributing</h2>
@@ -274,6 +274,7 @@ function init(answer) {
                 </section>
                 <section>
                     <h2 id="questions">Questions</h2>
+                    <p>GitHub username: ${answer.github}</p>
                     <p>For more information, I can be reached at: ${answer.email}</p>
                     <p>To see the repository for my project: <a href="${answer.link}">click here</a>.</p>
                     <p>To see my GitHub profile <a href="https://github.com/${answer.github}">click here</a>.</p>
