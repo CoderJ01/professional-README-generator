@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CoderJ01/professional-README-generator#readme",
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "license-icons": "^1.0.0"
   }
 }
