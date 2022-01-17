@@ -5,7 +5,7 @@ const fs = require('fs');
 // TODO: Create an array of questions for user input
 const questions = ['What is your name?', 'Enter your GitHub username', 'Enter a description for your README',
 'Enter installation requirements for your README', 'Enter information on how to use the application', 'Enter guidelines on how other users can contribute to the project',
-'Enter test instructions for the appliacation', 'Enter a GitHub link of your project', 'Enter your email address', 'Chose a license for your application',
+'Enter test instructions for the appliacation', 'Enter a GitHub repository link of your project', 'Enter your email address', 'Chose a license for your application',
 'Enter the title of your project'];
 
 // TODO: Create a function to write README file
@@ -118,7 +118,7 @@ const promptDeveloper = function () {
                     return true;
                 } 
                 else {
-                    console.log('You need to enter a GitHub link');
+                    console.log('You need to enter a GitHub repository link');
                     return false;
                 }
             }
@@ -275,6 +275,7 @@ function init(answer) {
                 <section>
                     <h2 id="questions">Questions</h2>
                     <p>For more information, I can be reached at: ${answer.email}</p>
+                    <p>To see the repository for my project: <a href="${answer.link}">click here</a>.</p>
                     <p>To see my GitHub profile <a href="https://github.com/${answer.github}">click here</a>.</p>
                 </section>
                 <section id="image">
