@@ -12,7 +12,5 @@ This README generator is designed to create a README.md file based on a user's r
 ## Screenshot of README
 ![Alt text](./assets/images/image-README.JPG?raw=true "README file")
 
-## Tutorial
-
 ## Contribution
 Made by CoderJ01
