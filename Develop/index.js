@@ -176,16 +176,16 @@ function init(answer) {
     var icon = '';
 
     if (answer.license === 'MIT') {
-        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/mit.png" width="64" height="64">';
+        icon = '![Alt text](../license-icons/dist/64x64/mit.png?raw=true)';
     }
     if (answer.license === 'Apache-2.0') {
-        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/apache.png" width="64" height="64">';
+        icon = '![Alt text](../license-icons/dist/64x64/apache.png?raw=true)';
     }
     if (answer.license === 'GPL-3.0') {
-        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/gpl.png" width="64" height="64">';
+        icon = '![Alt text](../license-icons/dist/64x64/gpl.png?raw=true)';
     }
     if (answer.license === 'BSD-2-Clause' || answer.license === 'BSD-3-Clause' || answer.license === 'BSD-4-Clause') {
-        icon = '<img alt="Github logo" src="../license-icons/dist/64x64/bsd.png" width="64" height="64">';
+        icon = '![Alt text](../license-icons/dist/64x64/bsd.png?raw=true)';
     }
     if (answer.license === 'None') {
         icon = '';
@@ -193,6 +193,8 @@ function init(answer) {
     }
 
     return `# ${answer.title}
+
+    ${icon}
 
     ## Table of Contents
     1. [Installation](#installation)
