@@ -163,7 +163,7 @@ const promptDeveloper = function () {
         fs.writeFile('./dist/README.md', init(answer), function (err) {
             if (err) throw err;
           
-            console.log('Portfolio complete! Check out index.html to see the output!');
+            console.log('Portfolio complete! Check out README.md to see the output!');
         });
     });
 }
