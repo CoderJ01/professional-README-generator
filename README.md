@@ -7,10 +7,12 @@ This README generator is designed to create a README.md file based on a user's r
  * Node.js
 
 ## Terminal
-![Alt text](./images/image-terminal.JPG?raw=true "terminal")
+![Alt text](./assets/images/image-terminal.JPG?raw=true "terminal")
 
 ## Screenshot of README
-![Alt text](./images/image-README.JPG?raw=true "README file")
+![Alt text](./assets/images/image-README.JPG?raw=true "README file")
+
+## Tutorial
 
 ## Contribution
 Made by CoderJ01

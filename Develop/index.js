@@ -189,7 +189,7 @@ function init(answer) {
     }
     if (answer.license === 'None') {
         icon = '';
-        answer.license = 'no license'
+        answer.license = 'no license';
     }
 
     return `<!DOCTYPE html>
