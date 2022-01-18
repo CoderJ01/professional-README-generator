@@ -160,7 +160,7 @@ const promptDeveloper = function () {
     ])
     .then(function (answer) {
         // Function call to initialize app
-        fs.writeFile('./dist/index.html', init(answer), function (err) {
+        fs.writeFile('./dist/README.md', init(answer), function (err) {
             if (err) throw err;
           
             console.log('Portfolio complete! Check out index.html to see the output!');
@@ -192,100 +192,35 @@ function init(answer) {
         answer.license = 'no license';
     }
 
-    return `<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8" />
-            <title>README file</title>
-            <style>
-                * {
-                    margin: 0;
-                }
-                header {
-                    background-color: rgb(128, 238, 57);
-                    text-align: center;
-                    font-size: 30px;
-                }
-                body {
-                    background-color: rgb(214, 219, 223);
-                }
-                main {
-                    margin-top: 10px;
-                }
-                main section {
-                    height: 175px;
-                    width: 85%;
-                    margin-left: 1%;
-                }
-                section h2 {
-                    text-decoration: underline;
-                }
-                section h3 {
-                    font-weight: normal;
-                }
-                section p {
-                    margin-top: 10px;
-                    font-size: 21px;
-                    font-family: 'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L';
-                }
-                #image {
-                    margin-top: -1375px;
-                    margin-left: 1200px;
-                    width: 75px;
-                }
-            </style>
-        </head>
-        <body>
-            <header>
-                <h1>${answer.title}</h1>
-            </header>
-            <main>
-                <section>
-                    <h2>Description</h2>
-                    <p>${answer.description}</p>
-                </section>
-                <section>
-                    <h2>Table of Contents</h2>
-                    <h3><a href="#installation">Installation</a></h3>
-                    <h3><a href="#usage">Usage</a></h3>
-                    <h3><a href="#license">License</a></h3>
-                    <h3><a href="#contributing">Contributing</a></h3>
-                    <h3><a href="#test">Tests</a></h3>
-                    <h3><a href="#questions">Questions</a></h3>
-                </section>
-                <section>
-                    <h2 id="installation">Installation</h2>
-                    <p>${answer.requirements}</p>
-                </section>
-                <section>
-                    <h2 id="usage">Usage</h2>
-                    <p>${answer.instructions}</p>
-                </section>
-                <section>
-                    <h2 id="license">License</h2>
-                    <p>This application is covered under ${answer.license}.</p>
-                </section>
-                <section>
-                    <h2 id="contributing">Contributing</h2>
-                    <p>${answer.guidelines}</p>
-                </section>
-                <section>
-                    <h2 id="test">Tests</h2>
-                    <p>${answer.test}</p>
-                </section>
-                <section>
-                    <h2 id="questions">Questions</h2>
-                    <p>GitHub username: ${answer.github}</p>
-                    <p>For more information, I can be reached at: ${answer.email}</p>
-                    <p>To see the repository for my project: <a href="${answer.link}">click here</a>.</p>
-                    <p>To see my GitHub profile <a href="https://github.com/${answer.github}">click here</a>.</p>
-                </section>
-                <section id="image">
-                    ${icon}
-                </section>
-            </main>
-        </body>
-    </html>`;
+    return `# ${answer.title}
+
+    ## Table of Contents
+    1. [Installation](#installation)
+    2. [Usage](#usage)
+    3. [License](#license)
+    4. [Tests](#tests)
+    5. [Questions](#questions)
+    
+    ## Installation
+    ${answer.requirements}
+    
+    ## Usage
+    ${answer.instructions}
+    
+    ## License
+    This application is covered under ${answer.license}.
+    
+    ## Contributing
+    ${answer.guidelines}
+    
+    ## Tests
+    ${answer.test}
+    
+    ## Questions
+     * GitHub username: ${answer.github}
+     * For more information, I can be reached at ${answer.email}.
+     * To see the repository for my project [click here](${answer.link}).
+     * To see my GitHub profile [click here](https://github.com/${answer.github}).`;
 }
 
 
