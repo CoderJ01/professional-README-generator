@@ -1,4 +1,6 @@
-# Weather Dashboard
+# Sample Title
+
+    
 
     ## Table of Contents
     1. [Installation](#installation)
@@ -11,7 +13,7 @@
     sample installation requirements
     
     ## Usage
-    sample info on how to use application
+    sample info
     
     ## License
     This application is covered under no license.
@@ -23,7 +25,7 @@
     sample test instructions
     
     ## Questions
-     * GitHub username: coderj01
+     * GitHub username: coderJ01
      * For more information, I can be reached at sample@email.com.
-     * To see the repository for my project [click here](https://github.com/CoderJ01/weather-dashboard-2).
-     * To see my GitHub profile [click here](https://github.com/coderj01).
+     * To see the repository for my project [click here](wikipedia.org).
+     * To see my GitHub profile [click here](https://github.com/coderJ01).

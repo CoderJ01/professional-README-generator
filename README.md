@@ -9,5 +9,8 @@ This README generator is designed to create a README.md file based on a user's r
 ## Terminal
 ![Alt text](./assets/images/image-terminal.JPG?raw=true "terminal")
 
+## Walkthrough
+[Video](https://github.com/CoderJ01/professional-README-generator/tree/main/assets/videos)
+
 ## Contribution
 Made by CoderJ01
