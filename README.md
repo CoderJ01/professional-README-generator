@@ -10,7 +10,7 @@ This README generator is designed to create a README.md file based on a user's r
 ![Alt text](./assets/images/image-terminal.JPG?raw=true "terminal")
 
 ## Walkthrough
-[Video](https://github.com/CoderJ01/professional-README-generator/tree/main/assets/videos)
+[Video](https://youtu.be/5cFsnz0urKU)
 
 ## Contribution
 Made by CoderJ01
